@@ -3,7 +3,6 @@
 
 name: Testar Compilacao C++
 
-# Define que o teste será executado a cada envio (push) de código
 on: [push]
 
 jobs:
@@ -11,10 +10,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # 1. Descarrega os ficheiros do teu repositório para a máquina virtual
-    - name: Baixar código fonte
+    - name: Baixar codigo fonte
       uses: actions/checkout@v3
 
-    # 2. Compila o ficheiro C++ usando o compilador g++
     - name: Compilar codigo C++
-      run: g++ -Wall -std=c++17 exerPrático.cpp -o avaliador
+      run: g++ -Wall -std=c++17 main.cpp -o avaliador
